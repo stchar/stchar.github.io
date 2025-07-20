@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Solarized Dark theme design system
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Solarized Dark base colors */
+    --background: 193 100% 11%;        /* base03 #002b36 */
+    --foreground: 186 8% 55%;          /* base0 #839496 */
+
+    --card: 192 81% 14%;               /* base02 #073642 */
+    --card-foreground: 186 8% 55%;     /* base0 #839496 */
+
+    --popover: 192 81% 14%;            /* base02 #073642 */
+    --popover-foreground: 186 8% 55%;  /* base0 #839496 */
+
+    /* Solarized Blue primary */
+    --primary: 205 82% 49%;            /* blue #268bd2 */
+    --primary-foreground: 193 100% 11%; /* base03 #002b36 */
+
+    /* Subtle background secondary */
+    --secondary: 192 81% 14%;          /* base02 #073642 */
+    --secondary-foreground: 180 9% 61%; /* base1 #93a1a1 */
+
+    --muted: 180 7% 34%;               /* base01 #586e75 */
+    --muted-foreground: 180 7% 34%;    /* base01 #586e75 */
+
+    /* Solarized Cyan accent */
+    --accent: 175 74% 41%;             /* cyan #2aa198 */
+    --accent-foreground: 193 100% 11%; /* base03 #002b36 */
+
+    --destructive: 1 79% 52%;          /* red #dc322f */
+    --destructive-foreground: 186 8% 55%; /* base0 #839496 */
+
+    --border: 180 7% 34%;              /* base01 #586e75 */
+    --input: 192 81% 14%;              /* base02 #073642 */
+    --ring: 205 82% 49%;               /* blue #268bd2 */
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+  }
+}
+
+/* Solarized-specific terminal styles */
+@layer components {
+  .terminal-prompt::before {
+    content: "$ ";
+    @apply text-accent font-mono;
+  }
+  
+  .terminal-output::before {
+    content: "> ";
+    @apply text-muted-foreground font-mono;
+  }
+  
+  .blog-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 10px hsl(var(--accent) / 0.4);
+  }
+}
