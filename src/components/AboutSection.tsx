@@ -22,7 +22,7 @@ const AboutSection = () => {
                   development, DevOps practices, and system (failures) architecture.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  When I'm not coding, I'm sleeping just poke me with a stick.
+                  If I'm not coding then I'm sleeping just poke me with a stick.
                 </p>
               </div>
 
