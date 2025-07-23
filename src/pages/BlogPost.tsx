@@ -56,15 +56,15 @@ const BlogPostPage = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="terminal-prompt mb-8">
-            <span className="text-accent font-mono text-lg glow-text">cat ./posts/{slug}.md</span>
+            <span className="text-accent font-mono text-lg glow-text">pushd posts; cat {slug}.md</span>
           </div>
 
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="inline-flex items-center mb-8 blog-link hover:text-accent transition-colors"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
-            <span className="font-mono">cd ..</span>
+            <span className="font-mono">popd</span>
           </Link>
 
           {loading && (
@@ -91,7 +91,7 @@ const BlogPostPage = () => {
                 {post.tags && post.tags.length > 0 && (
                   <div className="flex flex-wrap gap-2 mt-4">
                     {post.tags.map((tag) => (
-                      <span 
+                      <span
                         key={tag}
                         className="px-2 py-1 text-xs font-mono bg-secondary text-secondary-foreground rounded"
                       >
@@ -101,9 +101,9 @@ const BlogPostPage = () => {
                   </div>
                 )}
               </header>
-              
+
               <div className="markdown-content">
-                <ReactMarkdown 
+                <ReactMarkdown
                   components={{
                     h1: ({children}) => <h1 className="text-2xl font-bold text-foreground mt-8 mb-4 first:mt-0">{children}</h1>,
                     h2: ({children}) => <h2 className="text-xl font-semibold text-foreground mt-6 mb-3">{children}</h2>,
