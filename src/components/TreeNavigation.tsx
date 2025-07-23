@@ -28,7 +28,7 @@ const TreeNavigation = () => {
                 <Link
                   to={`/posts/${post.slug}`}
                   className="hover:text-foreground transition-colors cursor-pointer">
-                  <span className="font-mono">{post.slug}</span>
+                  <span className="font-mono">{post.slug}.md</span>
                 </Link>
               </div>
             ))}
