@@ -1,5 +1,6 @@
 import { FileText, User, Folder } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
+import { Link } from "react-router-dom";
 
 const TreeNavigation = () => {
   return (
@@ -24,9 +25,11 @@ const TreeNavigation = () => {
                   {index === blogPosts.slice(0, 6).length - 1 ? "└── " : "├── "}
                 </span>
                 <FileText className="h-3 w-3 mr-2" />
-                <span className="hover:text-foreground transition-colors cursor-pointer">
-                  <a href={`posts/${post.slug}`} >{post.slug}.md</a>
-                </span>
+                <Link
+                  to={`/posts/${post.slug}`}
+                  className="hover:text-foreground transition-colors cursor-pointer">
+                  <span className="font-mono">{post.slug}</span>
+                </Link>
               </div>
             ))}
 
